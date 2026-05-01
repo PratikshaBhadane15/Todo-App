@@ -3,13 +3,13 @@ var express = require("express");
 var indexRouter = require("./routes/index");
 
 var app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const cors = require("cors");
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CORS_ORIGIN || "http://localhost:5173",
   })
 );
 
